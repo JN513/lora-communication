@@ -34,6 +34,10 @@ esp_err_t get_bmp_data(){
 }
 
 esp_err_t get_sensors_data(float *temperature, float *pressure, float *humidity, u_int8_t *luminosity){
+
+    ESP_ERROR_CHECK(get_bmp_data());
+    ESP_ERROR_CHECK(get_ldr_data());
+
     *temperature = data.temperature;
     *pressure = data.pressure;
     *humidity = data.humidity;
@@ -45,6 +49,10 @@ esp_err_t get_sensors_data(float *temperature, float *pressure, float *humidity,
 }
 
 char * get_serialize_sensors_data(){
+
+    ESP_ERROR_CHECK(get_bmp_data());
+    ESP_ERROR_CHECK(get_ldr_data());
+
     char *payload;
 
     payload = (char *)malloc(60);
@@ -95,5 +103,9 @@ esp_err_t init_sensors(){
 }
 
 SensorData getStructData(){
+
+    ESP_ERROR_CHECK(get_bmp_data());
+    ESP_ERROR_CHECK(get_ldr_data());
+
     return data;
 }
