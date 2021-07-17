@@ -33,6 +33,6 @@ SensorData data;
 
 esp_err_t get_ldr_data();
 esp_err_t get_bmp_data();
-esp_err_t get_sensors_data(float *temperature, float *pressure, float *humidity, float *luminosity);
+esp_err_t get_sensors_data(float *temperature, float *pressure, float *humidity, u_int8_t *luminosity);
 char* get_serialize_sensors_data();
 esp_err_t init_sensors();
