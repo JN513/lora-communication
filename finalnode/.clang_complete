@@ -114,7 +114,7 @@
 -I/media/julio/julio/projetos/lora-communication/finalnode/components/lmic-esp-idf-master/src/lmic
 -I/media/julio/julio/projetos/lora-communication/finalnode/components/bmp280
 -I/media/julio/julio/projetos/lora-communication/finalnode/components/get_sensors_data/include
--I/media/julio/julio/projetos/lora-communication/finalnode/components/lmic-esp-idf-master/include
+-I/media/julio/julio/projetos/lora-communication/finalnode/components/ttn-esp32/include
 -DHAVE_CONFIG_H
 -DMBEDTLS_CONFIG_FILE="mbedtls/esp_config.h"
 -DUNITY_INCLUDE_CONFIG_H
