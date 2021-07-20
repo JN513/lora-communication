@@ -24,21 +24,18 @@
 #include "driver/gpio.h"
 #include "driver/adc.h"
 
-#include "mqtt_client.h"
-#include "lmic.h"
-
 #include "get_sensors_data.h"
 
 const char *TAG = "finalnode";
 
-gpio_num_t led = GPIO_NUM_2;
-
 void setup(void);
+void loop(void);
 
-void app_main(void){
+extern "C" void app_main(void){
     // Iniciando sistema
 
     setup();
+    loop();
 }
 
 void setup(void){
@@ -48,5 +45,16 @@ void setup(void){
 
     // Iniciando Sensores
 
-    ESP_ERROR_CHECK(init_sensors());
+    //ESP_ERROR_CHECK(init_sensors());
+
+    // Iniciando Lora
+}
+
+void loop(void){
+    // Iniciando loop
+    ESP_LOGI(TAG, "Iniciando Loop");
+
+    while(1){
+        vTaskDelay(1000/ portTICK_PERIOD_MS);
+    }
 }

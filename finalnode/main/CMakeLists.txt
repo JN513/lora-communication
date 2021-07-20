@@ -1,2 +1,2 @@
-idf_component_register(SRCS "finalnode.c"
+idf_component_register(SRCS "finalnode.cpp"
                     INCLUDE_DIRS ".")
